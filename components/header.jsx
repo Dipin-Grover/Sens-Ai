@@ -39,7 +39,7 @@ const Header = () => {
             
 
             <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger asChild>
               <Button>
                    <StarsIcon className="h-4 w-4" />
                    <span className='hidden md:block'>
@@ -85,11 +85,22 @@ const Header = () => {
             <Button variant="outline">Sign In</Button>   
           </SignInButton>
         </SignedOut>
+
+
         <SignedIn>
-          <UserButton />
-        </SignedIn>
-          </div>
-        </nav>
+            <UserButton
+              appearance={{
+                elements: {
+                  avatarBox: "w-10 h-10",
+                  userButtonPopoverCard: "shadow-xl",
+                  userPreviewMainIdentifier: "font-semibold",
+                },
+              }}
+              afterSignOutUrl="/"
+            />
+          </SignedIn>
+        </div>
+      </nav>
      
         
 
